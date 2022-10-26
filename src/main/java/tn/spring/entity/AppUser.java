@@ -36,7 +36,7 @@ public class AppUser  {
 	private int points;
 	@JsonIgnore
 	@OneToMany (mappedBy = "user")
-	public List<reservation> votes;
+	public List<reservation> reservations;
 	
 	
 }

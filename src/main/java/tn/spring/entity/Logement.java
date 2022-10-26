@@ -29,6 +29,7 @@ public class Logement implements Serializable {
     private String date;
     
     @JsonIgnore
+    @Transient
     @OneToMany (mappedBy = "logement")
 	public List<reservation> reservations;
 
