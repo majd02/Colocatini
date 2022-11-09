@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
-import tn.spring.entity.AppUser;
+import tn.spring.entity.User;
 import tn.spring.entity.Logement;
+import tn.spring.entity.User;
 import tn.spring.entity.reservation;
 import tn.spring.repository.LogementRepository;
 import tn.spring.repository.UserRepository;
@@ -24,7 +25,7 @@ public class Reservationservice {
 	     LogementRepository articleRepository;
 	    public void add(reservation v,int ida,Long id) {
 	    	
-	    	AppUser u= userRepository.findById(id).orElse(null);
+	    	User u= userRepository.findById(id).orElse(null);
 	    	Logement a = articleRepository.findById(ida).get();
 	    	v.setLogement(a);
 	    	v.setUser(u);
@@ -34,7 +35,7 @@ public class Reservationservice {
 	    	return vr.findAll();
 	    }
 	    public List <reservation> mine (Long id ){
-	    	AppUser u= userRepository.findById(id).orElse(null);
+	    	User u= userRepository.findById(id).orElse(null);
 		    return u.getReservations();
 	    }
 	    public void accept (Long id) {
@@ -51,7 +52,7 @@ public class Reservationservice {
 	    public int accnum(Long id) {
 	    	 
 	    	
-	    	AppUser u= userRepository.findById(id).orElse(null);
+	    	User u= userRepository.findById(id).orElse(null);
 	    	List<reservation> ress= u.getReservations();
 
 	    	for(reservation r :ress)

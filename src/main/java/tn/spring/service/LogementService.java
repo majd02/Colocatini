@@ -6,7 +6,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import tn.spring.entity.AppUser;
+import tn.spring.entity.User;
 import tn.spring.entity.Logement; 
 import tn.spring.exception.ArticleNotFoundException;
 import tn.spring.repository.LogementRepository; 

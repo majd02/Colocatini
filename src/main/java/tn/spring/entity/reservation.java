@@ -24,7 +24,7 @@ public class reservation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
-	public AppUser user ;
+	public User user ;
 	@ManyToOne
 	public Logement logement;
 	public String etat;
